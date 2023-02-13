@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   const List = [
     {
       title: "Home",
@@ -63,13 +65,16 @@ const Sidebar = () => {
       url: "https://cdn-icons-png.flaticon.com/512/2139/2139040.png",
     },
   ];
+
+  // if (!isMenuOpen) return null;
+
   const displayList = (list, heading) => {
     return (
       <>
         {heading && <h1 className="ml-6 font-semibold mt-2">{heading}</h1>}
         <ul className="items-center border-b-2 border-gray-200">
-          {list.map((item) => (
-            <div className="flex my-4">
+          {list.map((item, index) => (
+            <div className="flex my-4" key={index}>
               <img src={item.url} alt="icon" className="h-7 w-9 mx-6" />
               <li className="text-sm">{item.title}</li>
             </div>
@@ -78,13 +83,13 @@ const Sidebar = () => {
       </>
     );
   };
-  return (
+  return isMenuOpen ? (
     <div className="mr-10">
       {displayList(List)}
       {displayList(ExploreList, "Explore")}
       {displayList(helpList, "Help")}
     </div>
-  );
+  ) : null;
 };
 
 export default Sidebar;
