@@ -70,7 +70,7 @@ const Sidebar = () => {
 
   const displayList = (list, heading) => {
     return (
-      <>
+      <div className="w-full mr-20">
         {heading && <h1 className="ml-6 font-semibold mt-2">{heading}</h1>}
         <ul className="items-center border-b-2 border-gray-200">
           {list.map((item, index) => (
@@ -80,11 +80,11 @@ const Sidebar = () => {
             </div>
           ))}
         </ul>
-      </>
+      </div>
     );
   };
   return isMenuOpen ? (
-    <div className="mr-10">
+    <div>
       {displayList(List)}
       {displayList(ExploreList, "Explore")}
       {displayList(helpList, "Help")}
