@@ -14,7 +14,7 @@ const WatchPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-24 m-5">
       <iframe
         width="1000"
         height="500"
