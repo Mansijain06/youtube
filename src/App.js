@@ -7,6 +7,7 @@ import store from "./utils/store";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import VideoSearchList from "./components/VideoSearchList";
+import Demo from './components/Demo';
 
 const appRouter = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/videoSearchList",
         element: <VideoSearchList />,
+      },
+      {
+        path: "/demo",
+        element: <Demo />
       }
     ],
   },
