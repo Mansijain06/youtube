@@ -4,7 +4,7 @@ const Demo2 = () => {
     let x = 0;
     const [y, setY] = useState(0);
     const ref = useRef(0);
-    console.log(ref)
+    console.log(ref);
     return (
         <div className="mt-24 border border-black w-96 m-2 p-4">
             <div className="flex justify-between items-center mb-10">
@@ -22,13 +22,19 @@ const Demo2 = () => {
 
             <div className="flex justify-between items-center mb-10">
                 <h1 className="font-bold text-lg">State - {y}</h1>
-                <button onClick={() => setY(y + 1)} className="bg-green-500 p-2 text-white font-bold">
+                <button
+                    onClick={() => setY(y + 1)}
+                    className="bg-green-500 p-2 text-white font-bold"
+                >
                     Increase State
                 </button>
             </div>
             <div className="flex justify-between items-center">
                 <h1 className="font-bold text-lg">State - {ref.current}</h1>
-                <button onClick={() => ++ref.current} className="bg-green-500 p-2 text-white font-bold">
+                <button
+                    onClick={() => ++ref.current}
+                    className="bg-green-500 p-2 text-white font-bold"
+                >
                     Increase ref
                 </button>
             </div>
