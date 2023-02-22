@@ -8,6 +8,7 @@ import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import VideoSearchList from "./components/VideoSearchList";
 import Demo from './components/Demo';
+import Demo2 from "./components/Demo2";
 
 const appRouter = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/demo",
         element: <Demo />
+      },
+      {
+        path: '/demo2',
+        element: <Demo2 />
       }
     ],
   },
